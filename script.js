@@ -113,6 +113,39 @@ document.addEventListener("DOMContentLoaded", () => {
     container.innerHTML = html;
   }
 
+  function getCheckboxKey(checkbox) {
+    const label = checkbox.nextElementSibling;
+    if (!label) return null;
+    const itemText = label.textContent;
+    const listContainer = checkbox.closest(".list-container");
+    if (!listContainer) return null;
+    const listId = listContainer.id;
+    return `${listId}_${itemText}`;
+  }
+
+  function saveCheckboxState(checkbox) {
+    const key = getCheckboxKey(checkbox);
+    if (key) {
+      localStorage.setItem(key, checkbox.checked);
+    }
+  }
+
+  function loadCheckboxStates() {
+    const checkboxes = document.querySelectorAll(
+      '#shopping-lists input[type="checkbox"]'
+    );
+    checkboxes.forEach((checkbox) => {
+      const key = getCheckboxKey(checkbox);
+      if (key) {
+        const savedState = localStorage.getItem(key);
+        if (savedState !== null) {
+          checkbox.checked = savedState === "true";
+          checkbox.parentElement.classList.toggle("checked", checkbox.checked);
+        }
+      }
+    });
+  }
+
   function setupLanguageSwitcher() {
     const ruButton = document.getElementById("lang-ru");
     const czButton = document.getElementById("lang-cz");
@@ -143,7 +176,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const shoppingLists = document.getElementById("shopping-lists");
     shoppingLists.addEventListener("change", (event) => {
       if (event.target.type === "checkbox") {
-        event.target.parentElement.classList.toggle("checked");
+        event.target.parentElement.classList.toggle(
+          "checked",
+          event.target.checked
+        );
+        saveCheckboxState(event.target);
       }
     });
   }
@@ -156,4 +193,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setupLanguageSwitcher();
   setupCheckboxInteraction();
+  loadCheckboxStates();
 });
