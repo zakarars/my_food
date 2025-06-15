@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Недельный План Питания</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Недельный План Питания</h1>
+      <p>
+        Вкусные, энергетические блюда с минимальным ежедневным временем на
+        готовку.
+      </p>
+    </header>
+
+    <main>
+      <section id="meal-plan">
+        <h2>План Питания</h2>
+        <article>
+          <h3>Воскресенье</h3>
+          <ul>
+            <li>
+              <b>Ужин:</b> Запеченные в духовке куриные бедра с гречкой и свежим
+              салатом.
+            </li>
+            <li>
+              <b>Задача:</b> Запечь большую партию куриных бедер и сварить
+              гречку.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Понедельник</h3>
+          <ul>
+            <li>
+              <b>Завтрак:</b> Греческий йогурт с медом и грецкими орехами.
+            </li>
+            <li><b>Обед:</b> (Готовый) Холодный салат с курицей и гречкой.</li>
+            <li>
+              <b>Ужин:</b> (Готовые) Разогретые куриные бедра и гречка с
+              запеченной цветной капустой.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Вторник</h3>
+          <ul>
+            <li><b>Завтрак:</b> Яичница-болтунья с цельнозерновым тостом.</li>
+            <li><b>Обед:</b> (Готовые) Остатки курицы и гречки.</li>
+            <li>
+              <b>Ужин:</b> (Готовая) Последняя порция запеченной курицы в
+              большом салате.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Среда</h3>
+          <ul>
+            <li><b>Завтрак:</b> Яичница-болтунья с цельнозерновым тостом.</li>
+            <li><b>Обед:</b> Простой чечевичный суп (консервированный).</li>
+            <li>
+              <b>Ужин:</b> <em>Купить свежие ингредиенты</em> и приготовить
+              быстрое рагу из курицы с овощами (стир-фрай).
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Четверг</h3>
+          <ul>
+            <li>
+              <b>Завтрак:</b> Греческий йогурт с медом и грецкими орехами.
+            </li>
+            <li><b>Обед:</b> (Готовый) Остатки куриного стир-фрая.</li>
+            <li>
+              <b>Ужин:</b> Большая кастрюля армянского супа из чечевицы и
+              абрикосов (Адасапур).
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Пятница</h3>
+          <ul>
+            <li><b>Завтрак:</b> Яичница-болтунья с цельнозерновым тостом.</li>
+            <li><b>Обед:</b> (Готовый) Остатки куриного стир-фрая.</li>
+            <li>
+              <b>Ужин:</b> (Готовый) Остатки супа из чечевицы и абрикосов.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Суббота</h3>
+          <ul>
+            <li><b>Завтрак:</b> Овсянка со свежими ягодами.</li>
+            <li>
+              <b>Обед:</b> (Готовый) Последняя порция супа из чечевицы и
+              абрикосов.
+            </li>
+            <li><b>Ужин:</b> Свободный ужин.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="shopping-lists">
+        <h2>Списки Покупок</h2>
+        <div class="language-switcher">
+          <button id="lang-ru" class="active">Русский</button>
+          <button id="lang-cz">Česky</button>
+        </div>
+
+        <div id="trip-1" class="shopping-trip">
+          <h3>Заход 1 (Воскресенье)</h3>
+          <div id="trip-1-ru" class="list-container"></div>
+          <div id="trip-1-cz" class="list-container hidden"></div>
+        </div>
+
+        <div id="trip-2" class="shopping-trip">
+          <h3>Заход 2 (Среда/Четверг)</h3>
+          <div id="trip-2-ru" class="list-container"></div>
+          <div id="trip-2-cz" class="list-container hidden"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Создано на основе markdown-файла.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
